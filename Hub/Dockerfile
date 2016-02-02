@@ -1,5 +1,5 @@
-FROM selenium/base:2.50.0
-MAINTAINER Selenium <selenium-developers@googlegroups.com>
+FROM sethuster/selenium-base:2.50.1
+MAINTAINER Sethuster <seth.urban@sendgrid.com>
 
 #========================
 # Selenium Configuration

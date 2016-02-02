@@ -1,4 +1,4 @@
-FROM selenium/node-base:2.50.0
+FROM sethuster/selenium-node-base
 MAINTAINER Selenium <selenium-developers@googlegroups.com>
 
 USER root

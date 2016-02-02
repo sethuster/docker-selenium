@@ -8,17 +8,18 @@ The project is made possible by volunteer contributors who have put in thousands
 [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/SeleniumHQ/docker-selenium?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Images included:
-- __selenium/base__: Base image which includes Java runtime and Selenium JAR file
-- __selenium/hub__: Image for running a Selenium Grid Hub
-- __selenium/node-base__: Base image for Selenium Grid Nodes which includes a virtual desktop environment and VNC support
+- __sethuster/selenium-base__: Base image which includes Java runtime and Selenium JAR file.  Updated for 2.50.1
+- __sethuster/selenium-hub__: Image for running a Selenium Grid Hub
+- __sethuster/selenium-node-base__: Base image for Selenium Grid Nodes which includes a virtual desktop environment and VNC support
 - __selenium/node-chrome__: Selenium node with Chrome installed, needs to be connected to a Selenium Grid Hub
-- __selenium/node-firefox__: Selenium node with Firefox installed, needs to be connected to a Selenium Grid Hub
+- __sethuster/node-firefox__: Selenium node with Firefox installed, needs to be connected to a Selenium Grid Hub
 - __selenium/standalone-chrome__: Selenium standalone with Chrome installed
 - __selenium/standalone-firefox__: Selenium standalone with Firefox installed
 - __selenium/standalone-chrome-debug__: Selenium standalone with Chrome installed and runs a VNC server
 - __selenium/standalone-firefox-debug__: Selenium standalone with Firefox installed and runs a VNC server
 - __selenium/node-chrome-debug__: Selenium node with Chrome installed and runs a VNC server, needs to be connected to a Selenium Grid Hub
-- __selenium/node-firefox-debug__: Selenium node with Firefox installed and runs a VNC server, needs to be connected to a Selenium Grid Hub
+- __sethuster/node-firefox-debug__: Selenium node with Firefox installed and runs a VNC server, needs to be connected to a Selenium Grid Hub
+- __sethuster/node-firefox-debugx__: Selenium node with Firefox installed and runs a VNC server, needs to be connected to selenium grid hub Configured for --x-networking
 
 ## Running the images
  
