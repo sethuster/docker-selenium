@@ -1,5 +1,5 @@
-#FROM selenium/node-chrome:2.47.1
-FROM sethuster/node-chrome:latest
+FROM selenium/node-chrome:2.50.0
+
 MAINTAINER Selenium <selenium-developers@googlegroups.com>
 
 USER root

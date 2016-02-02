@@ -1,4 +1,4 @@
-FROM ubuntu:15.04
+FROM ubuntu:15.10
 MAINTAINER Selenium <selenium-developers@googlegroups.com>
 
 #================================================
@@ -19,13 +19,13 @@ RUN apt-get update -qqy \
     unzip \
     wget \
   && rm -rf /var/lib/apt/lists/* \
-  && sed -i 's/\/dev\/urandom/\/dev\/.\/urandom/' ./usr/lib/jvm/java-8-openjdk-amd64/jre/lib/security/java.security
+  && sed -i 's/securerandom\.source=file:\/dev\/random/securerandom\.source=file:\/dev\/urandom/' ./usr/lib/jvm/java-8-openjdk-amd64/jre/lib/security/java.security
 
 #==========
 # Selenium
 #==========
 RUN  mkdir -p /opt/selenium \
-  && wget --no-verbose http://selenium-release.storage.googleapis.com/2.47/selenium-server-standalone-2.47.1.jar -O /opt/selenium/selenium-server-standalone.jar
+  && wget --no-verbose http://selenium-release.storage.googleapis.com/2.50/selenium-server-standalone-2.50.0.jar -O /opt/selenium/selenium-server-standalone.jar
 
 #========================================
 # Add normal user with passwordless sudo

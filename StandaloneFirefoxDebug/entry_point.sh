@@ -6,10 +6,18 @@ function shutdown {
   wait $NODE_PID
 }
 
+if [ ! -z "$SE_OPTS" ]; then
+  echo "appending selenium options: ${SE_OPTS}"
+fi
+
+env | cut -f 1 -d "=" | sort > asroot
+sudo -E -u seluser -i env | cut -f 1 -d "=" | sort > asseluser
 sudo -E -i -u seluser \
+  $(for E in $(grep -vxFf asseluser asroot); do echo $E=$(eval echo \$$E); done) \
   DISPLAY=$DISPLAY \
   xvfb-run --server-args="$DISPLAY -screen 0 $GEOMETRY -ac +extension RANDR" \
-  java -jar /opt/selenium/selenium-server-standalone.jar ${JAVA_OPTS} &
+  java ${JAVA_OPTS} -jar /opt/selenium/selenium-server-standalone.jar \
+  ${SE_OPTS} &
 NODE_PID=$!
 
 trap shutdown SIGTERM SIGINT
